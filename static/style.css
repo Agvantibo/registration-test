@@ -1,0 +1,13 @@
+* {
+    font-family: 'Source Code Pro', 'Courier New', Courier, monospace
+}
+
+body {
+    background-color: hsv(343, 25%, 11%);
+    color: hsv(235, 14%, 92%);
+}
+
+.error {
+    color: red;
+    text-transform: uppercase;
+}

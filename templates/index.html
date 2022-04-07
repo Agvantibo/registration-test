@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Python 3 calculations</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>Python 3 server-side eval-based calculations</h1>
+        {% if error %}
+        <h3 class="error">Python 3 computation error in expression:<br><br>{{expr}}</h3>
+        {% endif %}
+        {% if text %}
+        <h3>{{text}}</h3>
+        {% endif %}
+        <form name='main' action='' method="POST">
+            <input name="text" size="40" value="">
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
