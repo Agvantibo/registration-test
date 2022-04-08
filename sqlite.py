@@ -37,17 +37,15 @@ def dump_data():
 
 def write_account(database, name, hash):
 
+    global sql
+
     # create a database connection
     conn = create_connection(database)
 
     if conn is not None:
-        sql = '''INSERT INTO UAC(name,password_hash) VALUES (%(name)s, %(hash)s)'''
-        sqlite3.
+        sql = sql.SQL('''INSERT INTO UAC(name,password_hash) VALUES ({name}, {hash})''').format(name=sql.Identifier(name), hash=sql.Identifier(hash))
         cur = conn.cursor()
-        cur.execute(sql, {
-            'name': name,
-            'hash': hash
-        })
+        cur.execute(sql.as_string(cur))
         conn.commit()
         return cur.lastrowid
     else:
@@ -55,16 +53,16 @@ def write_account(database, name, hash):
 
 
 def read_account_pwd(database, name):
+    
+    global sql
 
     # create a database connection
     conn = create_connection(database)
 
     if conn is not None:
-        sql = '''SELECT hash from UAC where name = %(name)s'''
+        sql = sql.SQL('''SELECT hash from UAC where name = {name}''').format(name=sql.Identifier(name))
         cur = conn.cursor()
-        cur.execute(sql, {
-            'name': name,
-        })
+        cur.execute(sql.as_string(cur))
         return cur.fetchall()
     else:
         print("Error! cannot create the database connection.")
