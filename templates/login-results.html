@@ -1,0 +1,14 @@
+{% extends "service-message.html" %}
+{% block title %}Log In please{% endblock %}
+{% block header %}<h1">Your session state:</h1>{% endblock %}
+{% block message %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+<ul>
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endwith %}
+{% endblock %}

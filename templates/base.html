@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        {% block headx %}{% endblock %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}">
+    </head>
+    <body>
+        {% block body %}{% endblock %}
+    </body>
+</html>

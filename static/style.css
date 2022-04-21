@@ -5,9 +5,22 @@
 body {
     background-color: hsv(343, 25%, 11%);
     color: hsv(235, 14%, 92%);
+    margin: 1em;
 }
 
-.error {
+pre {
+    box-shadow: inset -3px -3px 12;
+}
+
+.negative {
     color: red;
     text-transform: uppercase;
+}
+
+.positive {
+    color: limegreen;
+}
+
+.submit-button {
+    align-self: flex-end;
 }

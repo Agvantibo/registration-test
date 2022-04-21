@@ -1,0 +1,8 @@
+{% extends "service-message.html" %}
+{% block title %}Success!{% endblock %}
+{% block header %}<h1 class="positive">Registration successful!</h1>{% endblock %}
+{% block message %}
+    <h3>You, {% if username %}{{username}}{% else %}an entity for which our session management doesn't work,{% endif %} are now a honored member of our site, may you uptime be high and your servers most stable</h3>
+    <br>
+    <a href="/login">You may now log in to your shiny new account.</a>
+{% endblock %}

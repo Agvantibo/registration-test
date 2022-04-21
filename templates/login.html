@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Log In please{% endblock %}
+{% block body %}
+        <h1>Log In to continue</h1>
+        {{ form.hidden_tag() }}
+        <form name='register' action='' method="POST" novalidate>
+            <p>{{ form.username(size="40", value="", placeholder="Your user name") }}</p>
+            {% for error in form.username.errors %}
+            <span class="negative">[{{ error }}]</span>
+            {% endfor %}
+            <p>{{ form.password(size="40", placeholder="Your password") }}</p>
+            {% for error in form.username.errors %}
+            <span class="negative">[{{ error }}]</span>
+            {% endfor %}
+            <p>{{ form.remember_me() }} {{ form.remember_me.label}}</p>
+            <p>{{ form.submit(value="LOG IN", class="submit-button") }}</p><br><br>
+        </form>
+    <br><br>
+    <p>Don't have an account? Too bad! Luckily, you can still <a href="/register">register here</a>!</p>
+{% endblock %}

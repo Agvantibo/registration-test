@@ -1,0 +1,13 @@
+{% extends "service-message.html" %}
+{% block title %}Epic fail lol{% endblock %}
+{% block header %}<h1 class="negative">Registration F'd up!</h1>{% endblock %}
+{% block message %}
+  {% if error_msg %}
+  <h3>
+    Here's what went wrong:
+    <pre>{{error_msg}}</pre>
+  </h3>
+  {% else %}
+  <h4>Oh god, someone F'd up the situation so badly we don't even have anything good to say about this. Good luck haha</h4>
+  {% endif %}
+{% endblock %}
